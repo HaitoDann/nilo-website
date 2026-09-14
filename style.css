@@ -21,19 +21,22 @@
   --radius-sm: 9px;
   --max: 1160px;
   --ease: cubic-bezier(.22, .68, .18, 1);
+  --font-body: 'Onest', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Onest', system-ui, sans-serif;
 }
 
 /* ===== Reset & base ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   line-height: 1.65;
   letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
 }
+h1, h2, h3, .brand-name, .intro-title { font-family: var(--font-display); }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
@@ -77,33 +80,35 @@ body.intro-open { overflow: hidden; }
 }
 .intro-logo img {
   width: clamp(120px, 22vw, 168px); height: auto; position: relative; z-index: 1;
-  filter: drop-shadow(0 14px 34px rgba(31, 130, 211, .28));
   transition: transform .9s var(--intro-ease);
 }
 .intro-logo:hover img { transform: scale(1.03); }
-.intro-logo.press img { transform: scale(.94); transition: transform .5s var(--intro-ease); }
 .intro-title { font-size: clamp(2.4rem, 7vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; color: var(--text); }
 .intro-hint { font-size: 14px; color: var(--text-soft); letter-spacing: .01em; }
-/* halo lumineux doux et diffus (pas d'onde bleue brute) */
-.intro-ripple {
-  position: absolute; left: 50%; top: 50%; width: 220px; height: 220px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(31, 130, 211, .16), rgba(31, 130, 211, .06) 42%, transparent 68%);
-  opacity: 0; transform: translate(-50%, -50%) scale(.2); pointer-events: none; filter: blur(2px);
-}
-.intro-ripple.go { animation: introHalo 2.6s var(--intro-ease) forwards; }
-@keyframes introHalo {
-  0% { transform: translate(-50%, -50%) scale(.2); opacity: 0; }
-  25% { opacity: 1; }
-  100% { transform: translate(-50%, -50%) scale(7); opacity: 0; }
-}
+
 @media (prefers-reduced-motion: no-preference) {
+  /* Entrée + flottement continu du logo pendant l'intro */
+  .intro-logo { animation: introFloat 5s ease-in-out 1.6s infinite; }
   .intro-logo img { animation: introLogoIn 1.8s var(--intro-ease) both; }
   .intro-title { animation: introFadeUp 1.5s var(--intro-ease) .55s both; }
   .intro-hint { animation: introFadeUp 1.5s var(--intro-ease) 1.05s both, hintPulse 4.2s ease-in-out 2.4s infinite; }
+  /* Animation au clic : enfoncement puis rebond doux */
+  .intro-logo.press img { animation: introClickPop .7s var(--intro-ease) both; }
+
+  @keyframes introFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
   @keyframes introLogoIn { from { opacity: 0; transform: scale(.86); } to { opacity: 1; transform: scale(1); } }
   @keyframes introFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
   @keyframes hintPulse { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+  @keyframes introClickPop {
+    0%   { transform: scale(1); }
+    28%  { transform: scale(.88); }
+    55%  { transform: scale(1.09) rotate(-1.5deg); }
+    78%  { transform: scale(.98); }
+    100% { transform: scale(1) rotate(0); }
+  }
 }
+/* Repli sans animation : petit enfoncement au clic */
+.intro-logo.press img { transform: scale(.94); }
 
 /* ===== Buttons ===== */
 .btn {
