@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nilo — Votre solution desktop</title>
-  <meta name="description" content="Nilo est une application desktop pensée pour vous simplifier la vie. Téléchargez-la gratuitement et découvrez une nouvelle façon de travailler." />
+  <title>Nilo — Gestion de projets locale, sans compte ni serveur</title>
+  <meta name="description" content="Nilo est une application desktop de gestion de projets 100% locale : Kanban, Gantt, calendrier et sous-tâches. Vos données restent sur votre machine. Sans compte, sans cloud, sans serveur." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Nilo — Votre solution desktop" />
-  <meta property="og:description" content="Téléchargez Nilo et découvrez une nouvelle façon de travailler." />
+  <meta property="og:title" content="Nilo — Gestion de projets locale" />
+  <meta property="og:description" content="Kanban, Gantt, calendrier, sous-tâches. Vos données restent chez vous. Sans compte, sans cloud." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="assets/favicon.png" />
 </head>
 <body>
 
@@ -23,7 +23,7 @@
   <header class="site-header" id="top">
     <nav class="nav container">
       <a href="#top" class="brand">
-        <span class="brand-mark">N</span>
+        <img src="assets/favicon.png" alt="" class="brand-logo" width="30" height="30" />
         <span class="brand-name">Nilo</span>
       </a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -33,7 +33,7 @@
         <li><a href="#features">Fonctionnalités</a></li>
         <li><a href="#about">À propos</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://github.com/haitodann/nilo-website/releases/latest" class="btn btn-nav">Télécharger</a></li>
+        <li><a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe" class="btn btn-nav">Télécharger</a></li>
       </ul>
     </nav>
   </header>
@@ -43,26 +43,28 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
-          <span class="badge">✦ Nouveau · Version desktop</span>
-          <h1>Faites-en plus avec <span class="grad">Nilo</span></h1>
+          <span class="badge">✦ Beta publique · v0.15.2 · Windows</span>
+          <h1>Vos projets, <span class="grad">chez vous</span>.</h1>
           <p class="lead">
-            Nilo est l'application desktop qui simplifie votre quotidien.
-            Rapide, intuitive et pensée pour vous, elle vous accompagne à chaque étape.
+            Nilo est une application desktop de gestion de projets 100&nbsp;% locale.
+            Kanban, Gantt, calendrier et sous-tâches — le tout dans un dossier de votre choix.
+            <strong>Pas de compte, pas de cloud, pas de serveur.</strong>
           </p>
           <div class="hero-actions">
-            <a href="https://github.com/haitodann/nilo-website/releases/latest" class="btn btn-primary btn-lg">
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe" class="btn btn-primary btn-lg">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Télécharger Nilo
+              Télécharger pour Windows
             </a>
-            <a href="#features" class="btn btn-ghost btn-lg">En savoir plus</a>
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64_portable.exe" class="btn btn-ghost btn-lg">Version portable</a>
           </div>
-          <p class="hero-note">Gratuit · Disponible sur Windows, macOS et Linux</p>
+          <p class="hero-note">Gratuit · Installeur ou portable · Windows 10/11 (x64)</p>
         </div>
 
         <div class="hero-visual">
           <div class="window-mock">
             <div class="window-bar">
               <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="window-title">Nilo — Vault</span>
             </div>
             <div class="window-body">
               <div class="mock-sidebar">
@@ -73,15 +75,23 @@
                 <div class="mock-nav-item"></div>
               </div>
               <div class="mock-content">
-                <div class="mock-line w60"></div>
-                <div class="mock-card-row">
-                  <div class="mock-card"></div>
-                  <div class="mock-card"></div>
-                  <div class="mock-card"></div>
-                </div>
-                <div class="mock-line w80"></div>
                 <div class="mock-line w40"></div>
-                <div class="mock-block"></div>
+                <div class="kanban">
+                  <div class="k-col">
+                    <span class="k-head">À faire</span>
+                    <div class="k-card"></div>
+                    <div class="k-card"></div>
+                  </div>
+                  <div class="k-col">
+                    <span class="k-head">En cours</span>
+                    <div class="k-card accent"></div>
+                    <div class="k-card"></div>
+                  </div>
+                  <div class="k-col">
+                    <span class="k-head">Terminé</span>
+                    <div class="k-card done"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -92,10 +102,10 @@
     <!-- ===== Trust / stats ===== -->
     <section class="stats">
       <div class="container stats-inner">
-        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Gratuit</span></div>
-        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Plateformes</span></div>
-        <div class="stat"><span class="stat-num">0€</span><span class="stat-label">Sans engagement</span></div>
-        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Possibilités</span></div>
+        <div class="stat"><span class="stat-num">0</span><span class="stat-label">Compte requis</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Local &amp; hors-ligne</span></div>
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">Vues par projet</span></div>
+        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Vaults &amp; projets</span></div>
       </div>
     </section>
 
@@ -104,39 +114,39 @@
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Fonctionnalités</span>
-          <h2>Tout ce dont vous avez besoin</h2>
-          <p>Nilo réunit les outils essentiels dans une interface claire et agréable.</p>
+          <h2>Quatre façons de voir vos projets</h2>
+          <p>Chaque projet dispose de ses propres vues. Choisissez celle qui vous convient, changez quand vous voulez.</p>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Rapide et fluide</h3>
-            <p>Une application native pensée pour la performance, qui répond instantanément.</p>
+            <div class="feature-icon">🗂️</div>
+            <h3>Kanban</h3>
+            <p>Glissez-déposez vos tâches entre les colonnes. Filtres par priorité et tags, tri à la volée.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Simple à utiliser</h3>
-            <p>Une prise en main immédiate. Pas de configuration compliquée, vous êtes prêt en quelques secondes.</p>
+            <div class="feature-icon">📋</div>
+            <h3>Vue liste</h3>
+            <p>Toutes vos tâches groupées par statut, avec filtres, tri et ajout rapide inline.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Gantt interactif</h3>
+            <p>Des barres déplaçables et redimensionnables en temps réel pour planifier vos échéances.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Calendrier</h3>
+            <p>Une vue mensuelle des échéances, projet par projet, pour ne rien laisser passer.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>Sous-tâches</h3>
+            <p>Subdivisez vos tâches avec des cases à cocher et suivez la progression d'un coup d'œil.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">🔒</div>
-            <h3>Sécurisé</h3>
-            <p>Vos données restent chez vous. Nilo respecte votre vie privée par défaut.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">🌙</div>
-            <h3>Mode sombre</h3>
-            <p>Une interface agréable de jour comme de nuit, qui s'adapte à vos préférences.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">🔄</div>
-            <h3>Mises à jour régulières</h3>
-            <p>De nouvelles fonctionnalités arrivent en continu, distribuées via GitHub Releases.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">💻</div>
-            <h3>Multi-plateforme</h3>
-            <p>Windows, macOS et Linux : Nilo vous suit partout, avec la même expérience.</p>
+            <h3>Stockage local</h3>
+            <p>Un vault SQLite dans le dossier de votre choix. Zéro cloud, zéro compte, vos données restent chez vous.</p>
           </article>
         </div>
       </div>
@@ -146,30 +156,31 @@
     <section class="section section-alt" id="about">
       <div class="container about-inner">
         <div class="about-text">
-          <span class="eyebrow">À propos du projet</span>
-          <h2>Une solution pensée pour vous</h2>
+          <span class="eyebrow">Le concept</span>
+          <h2>Inspiré du modèle « vault » d'Obsidian</h2>
           <p>
-            Nilo est né d'une idée simple : rendre votre travail plus fluide sans complexité inutile.
-            Nous avons conçu une application desktop moderne, légère et respectueuse de votre temps.
+            Avec Nilo, vous choisissez un dossier. L'application y crée une base SQLite
+            (<code>nilo.db</code>) et c'est tout : vous travaillez. Vos données ne quittent
+            jamais votre machine.
           </p>
           <p>
-            Que vous soyez débutant ou utilisateur avancé, Nilo s'adapte à votre façon de faire.
-            Le projet évolue en continu grâce aux retours de sa communauté.
+            Un vault par client, par équipe, sur une clé USB ou un NAS… peu importe.
+            Nilo fonctionne entièrement hors-ligne, sans aucune dépendance réseau à l'exécution.
           </p>
           <ul class="check-list">
-            <li>Interface claire et sans distraction</li>
-            <li>Installation en un clic</li>
-            <li>Open source et transparent</li>
-            <li>Une communauté active et à l'écoute</li>
+            <li>Multi-vault et multi-projets, chacun avec sa couleur</li>
+            <li>Aucune inscription, aucune donnée envoyée en ligne</li>
+            <li>Mode sombre automatique selon votre système</li>
+            <li>Léger et rapide, construit avec Tauri (Rust + React)</li>
           </ul>
-          <a href="https://github.com/haitodann/nilo-website" class="btn btn-ghost">Voir le projet sur GitHub</a>
+          <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-ghost">Voir toutes les versions</a>
         </div>
         <div class="about-visual" aria-hidden="true">
           <div class="glass-card">
-            <div class="gc-row"><span class="gc-icon">✓</span> Prêt à l'emploi</div>
-            <div class="gc-row"><span class="gc-icon">✓</span> Léger et rapide</div>
-            <div class="gc-row"><span class="gc-icon">✓</span> Sans publicité</div>
-            <div class="gc-row"><span class="gc-icon">✓</span> Gratuit à vie</div>
+            <div class="gc-row"><span class="gc-icon">✓</span> Vos données sur votre disque</div>
+            <div class="gc-row"><span class="gc-icon">✓</span> Fonctionne hors-ligne</div>
+            <div class="gc-row"><span class="gc-icon">✓</span> Sans publicité, sans pistage</div>
+            <div class="gc-row"><span class="gc-icon">✓</span> Installeur &amp; version portable</div>
           </div>
         </div>
       </div>
@@ -179,13 +190,16 @@
     <section class="section download" id="download">
       <div class="container">
         <div class="download-card">
-          <h2>Prêt à essayer Nilo ?</h2>
-          <p>Téléchargez la dernière version dès maintenant. C'est gratuit et ça ne prend qu'une minute.</p>
-          <a href="https://github.com/haitodann/nilo-website/releases/latest" class="btn btn-primary btn-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Télécharger la dernière version
-          </a>
-          <p class="download-sub">Vous serez redirigé vers GitHub Releases.</p>
+          <h2>Téléchargez Nilo pour Windows</h2>
+          <p>Version 0.15.2 (beta publique). Choisissez l'installeur classique ou la version portable, sans installation.</p>
+          <div class="download-buttons">
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe" class="btn btn-primary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Installeur (.exe)
+            </a>
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64_portable.exe" class="btn btn-outline-light btn-lg">Version portable</a>
+          </div>
+          <p class="download-sub">⚠️ Windows peut afficher un avertissement SmartScreen sur les <code>.exe</code> non signés. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>
         </div>
       </div>
     </section>
@@ -198,20 +212,28 @@
           <h2>Questions fréquentes</h2>
         </div>
         <details class="faq-item">
-          <summary>Nilo est-il vraiment gratuit ?</summary>
-          <p>Oui, Nilo est entièrement gratuit et sans engagement. Aucune carte bancaire n'est requise.</p>
+          <summary>Où sont stockées mes données ?</summary>
+          <p>Uniquement sur votre machine, dans le dossier (« vault ») que vous choisissez. Nilo y crée une base SQLite <code>nilo.db</code>. Rien n'est envoyé sur Internet.</p>
         </details>
         <details class="faq-item">
-          <summary>Sur quels systèmes puis-je l'installer ?</summary>
-          <p>Nilo est disponible sur Windows, macOS et Linux. Rendez-vous sur la page de téléchargement pour la version qui correspond à votre système.</p>
+          <summary>Ai-je besoin d'un compte ou d'une connexion ?</summary>
+          <p>Non. Aucun compte, aucune inscription. Nilo fonctionne entièrement hors-ligne.</p>
         </details>
         <details class="faq-item">
-          <summary>Comment installer l'application ?</summary>
-          <p>Téléchargez le fichier correspondant à votre système depuis GitHub Releases, puis lancez-le. L'installation ne prend que quelques secondes.</p>
+          <summary>Sur quels systèmes Nilo fonctionne-t-il ?</summary>
+          <p>La beta publique actuelle est disponible pour <strong>Windows 10/11 (64 bits)</strong>, en installeur ou en version portable.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Windows affiche un avertissement au lancement, est-ce normal ?</summary>
+          <p>Oui. Les exécutables ne sont pas encore signés, donc SmartScreen peut afficher un avertissement. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle est la différence entre l'installeur et la version portable ?</summary>
+          <p>L'installeur place Nilo dans votre dossier utilisateur avec un raccourci. La version portable se lance directement, sans installation — pratique sur une clé USB.</p>
         </details>
         <details class="faq-item">
           <summary>Comment recevoir les mises à jour ?</summary>
-          <p>Les nouvelles versions sont publiées sur GitHub Releases. Vous pouvez suivre le dépôt pour être notifié à chaque sortie.</p>
+          <p>Les nouvelles versions sont publiées sur GitHub Releases. Suivez le dépôt pour être notifié à chaque sortie.</p>
         </details>
       </div>
     </section>
@@ -221,20 +243,19 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="brand-mark">N</span>
+        <img src="assets/favicon.png" alt="" class="brand-logo" width="28" height="28" />
         <span class="brand-name">Nilo</span>
-        <p>Votre solution desktop, simple et efficace.</p>
+        <p>Gestion de projets locale, sans serveur, sans compte. Vos données, toujours chez vous.</p>
       </div>
       <div class="footer-links">
         <a href="#features">Fonctionnalités</a>
         <a href="#about">À propos</a>
         <a href="#faq">FAQ</a>
-        <a href="https://github.com/haitodann/nilo-website/releases/latest">Télécharger</a>
-        <a href="https://github.com/haitodann/nilo-website">GitHub</a>
+        <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest">Télécharger</a>
       </div>
     </div>
     <div class="footer-bottom container">
-      <p>© <span id="year"></span> Nilo. Tous droits réservés.</p>
+      <p>© <span id="year"></span> Nilo. Fait avec ☕ — données chez vous, toujours.</p>
     </div>
   </footer>
 

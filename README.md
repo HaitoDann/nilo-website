@@ -1,6 +1,6 @@
 # Nilo — Site d'accueil
 
-Site vitrine de la solution desktop **Nilo**, en HTML/CSS/JS pur (sans dépendance), pensé pour être hébergé sur **GitHub Pages**.
+Site vitrine de **Nilo**, l'application desktop de gestion de projets locale (sans compte, sans serveur). HTML/CSS/JS pur, sans dépendance, hébergé sur **GitHub Pages**.
 
 ## Structure
 
@@ -8,38 +8,46 @@ Site vitrine de la solution desktop **Nilo**, en HTML/CSS/JS pur (sans dépendan
 index.html   → la page
 style.css    → les styles (responsive + mode sombre automatique)
 script.js    → menu mobile + petites interactions
-.nojekyll    → indique à GitHub Pages de servir les fichiers tels quels
+assets/      → logo et icônes de l'application
+.nojekyll    → sert les fichiers tels quels sur GitHub Pages
+.github/workflows/deploy-pages.yml → déploiement automatique sur Pages
 ```
 
 ## Prévisualiser en local
-
-Ouvre simplement `index.html` dans ton navigateur, ou lance un petit serveur :
 
 ```bash
 python3 -m http.server 8000
 # puis ouvre http://localhost:8000
 ```
 
-## Mettre en ligne avec GitHub Pages
+## Mise en ligne — GitHub Pages
 
-1. Va dans **Settings → Pages** du dépôt.
-2. Section *Build and deployment*, choisis **Deploy from a branch**.
-3. Sélectionne la branche (ex. `main`) et le dossier `/ (root)`, puis **Save**.
-4. Le site sera accessible à l'adresse `https://haitodann.github.io/nilo-website/` après quelques instants.
+Le déploiement est **automatique** via GitHub Actions (`.github/workflows/deploy-pages.yml`).
+À chaque push sur la branche configurée, le workflow :
 
-## Le bouton « Télécharger »
+1. active GitHub Pages (source = *GitHub Actions*) si nécessaire ;
+2. publie le contenu du dépôt ;
+3. met le site en ligne.
 
-Tous les boutons de téléchargement pointent vers :
+L'URL finale sera de la forme `https://haitodann.github.io/nilo-website/`.
 
-```
-https://github.com/haitodann/nilo-website/releases/latest
-```
+> Si le tout premier déploiement échoue faute de permissions, va dans
+> **Settings → Actions → General → Workflow permissions** et coche
+> *Read and write permissions*, puis relance le workflow.
 
-Il redirige automatiquement vers la **dernière release GitHub** du dépôt.
-Pense donc à publier une release contenant les binaires (Windows / macOS / Linux).
+## Téléchargement
+
+Les boutons pointent vers la dernière release de Nilo (`v0.15.2`) :
+
+- Installeur : `https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe`
+- Portable : `https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64_portable.exe`
+- Toutes les versions : `https://github.com/HaitoDann/Nilo-releases/releases/latest`
+
+> À chaque nouvelle version de Nilo, pense à mettre à jour le numéro `v0.15.2`
+> dans `index.html` (ou remplace les liens par la page `releases/latest`).
 
 ## Personnaliser
 
-- **Textes** : tout est dans `index.html` (présentation, fonctionnalités, FAQ).
-- **Couleurs** : modifie les variables `--primary`, `--grad-1`, etc. en haut de `style.css`.
-- **Nom de domaine** : ajoute un fichier `CNAME` si tu utilises un domaine personnalisé.
+- **Textes** : dans `index.html`.
+- **Couleurs** : variables `--primary`, `--grad-1`, etc. en haut de `style.css`.
+- **Domaine personnalisé** : ajoute un fichier `CNAME`.
