@@ -9,12 +9,14 @@
   if (intro) {
     body.classList.add('intro-open');
     var introLogo = intro.querySelector('.intro-logo');
+    var ripple = intro.querySelector('.intro-ripple');
     var entered = false;
 
     var enter = function () {
       if (entered) return;
       entered = true;
       if (introLogo) introLogo.classList.add('press');
+      if (ripple) { ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go'); }
       var wait = reduce ? 0 : 900;
       setTimeout(function () {
         intro.classList.add('hide');

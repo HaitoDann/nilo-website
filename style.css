@@ -80,35 +80,45 @@ body.intro-open { overflow: hidden; }
 }
 .intro-logo img {
   width: clamp(120px, 22vw, 168px); height: auto; position: relative; z-index: 1;
-  transition: transform .9s var(--intro-ease);
+  transition: transform 1s var(--intro-ease);
 }
-.intro-logo:hover img { transform: scale(1.03); }
+.intro-logo:hover img { transform: scale(1.02); }
 .intro-title { font-size: clamp(2.4rem, 7vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; color: var(--text); }
 .intro-hint { font-size: 14px; color: var(--text-soft); letter-spacing: .01em; }
+/* Onde très lente et diffuse au clic (bleu pâle, sans bord net) */
+.intro-ripple {
+  position: absolute; left: 50%; top: 50%; width: 240px; height: 240px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 130, 211, .12), rgba(31, 130, 211, .05) 45%, transparent 70%);
+  opacity: 0; transform: translate(-50%, -50%) scale(.3); pointer-events: none; filter: blur(3px);
+}
+.intro-ripple.go { animation: introHalo 3.4s var(--intro-ease) forwards; }
+@keyframes introHalo {
+  0%   { transform: translate(-50%, -50%) scale(.3); opacity: 0; }
+  30%  { opacity: .85; }
+  100% { transform: translate(-50%, -50%) scale(6); opacity: 0; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   /* Entrée + flottement continu du logo pendant l'intro */
-  .intro-logo { animation: introFloat 5s ease-in-out 1.6s infinite; }
+  .intro-logo { animation: introFloat 6s ease-in-out 1.6s infinite; }
   .intro-logo img { animation: introLogoIn 1.8s var(--intro-ease) both; }
   .intro-title { animation: introFadeUp 1.5s var(--intro-ease) .55s both; }
   .intro-hint { animation: introFadeUp 1.5s var(--intro-ease) 1.05s both, hintPulse 4.2s ease-in-out 2.4s infinite; }
-  /* Animation au clic : enfoncement puis rebond doux */
-  .intro-logo.press img { animation: introClickPop .7s var(--intro-ease) both; }
+  /* Animation au clic : enfoncement puis retour tout en douceur */
+  .intro-logo.press img { animation: introClickPop 1.1s var(--intro-ease) both; }
 
-  @keyframes introFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-  @keyframes introLogoIn { from { opacity: 0; transform: scale(.86); } to { opacity: 1; transform: scale(1); } }
+  @keyframes introFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  @keyframes introLogoIn { from { opacity: 0; transform: scale(.88); } to { opacity: 1; transform: scale(1); } }
   @keyframes introFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
   @keyframes hintPulse { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
   @keyframes introClickPop {
     0%   { transform: scale(1); }
-    28%  { transform: scale(.88); }
-    55%  { transform: scale(1.09) rotate(-1.5deg); }
-    78%  { transform: scale(.98); }
-    100% { transform: scale(1) rotate(0); }
+    40%  { transform: scale(.96); }
+    100% { transform: scale(1); }
   }
 }
-/* Repli sans animation : petit enfoncement au clic */
-.intro-logo.press img { transform: scale(.94); }
+/* Repli sans animation : léger enfoncement au clic */
+.intro-logo.press img { transform: scale(.97); }
 
 /* ===== Buttons ===== */
 .btn {
