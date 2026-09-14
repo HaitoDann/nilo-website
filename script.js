@@ -17,13 +17,13 @@
       entered = true;
       if (introLogo) introLogo.classList.add('press');
       if (ripple) { ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go'); }
-      var wait = reduce ? 0 : 360;
+      var wait = reduce ? 0 : 900;
       setTimeout(function () {
         intro.classList.add('hide');
         body.classList.remove('intro-open');
         setTimeout(function () {
           if (intro && intro.parentNode) intro.parentNode.removeChild(intro);
-        }, reduce ? 0 : 650);
+        }, reduce ? 0 : 1500);
       }, wait);
     };
 

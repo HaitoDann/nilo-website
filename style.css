@@ -58,17 +58,18 @@ code {
 /* ===== Écran d'intro ===== */
 body.intro-open { overflow: hidden; }
 .intro {
+  --intro-ease: cubic-bezier(.5, 0, .2, 1);
   position: fixed; inset: 0; z-index: 100;
   display: grid; place-items: center; background: var(--bg);
-  transition: opacity .6s var(--ease), transform .6s var(--ease);
+  transition: opacity 1.4s var(--intro-ease), transform 1.4s var(--intro-ease);
 }
 .intro::before {
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(58% 55% at 50% 42%, var(--primary-soft), transparent 72%);
   pointer-events: none;
 }
-.intro.hide { opacity: 0; transform: scale(1.06); pointer-events: none; }
-.intro-inner { position: relative; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; padding: 24px; }
+.intro.hide { opacity: 0; transform: scale(1.03); pointer-events: none; }
+.intro-inner { position: relative; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; padding: 24px; }
 .intro-logo {
   position: relative; background: none; border: none; cursor: pointer;
   padding: 28px; border-radius: 50%; display: grid; place-items: center;
@@ -76,29 +77,32 @@ body.intro-open { overflow: hidden; }
 }
 .intro-logo img {
   width: clamp(120px, 22vw, 168px); height: auto; position: relative; z-index: 1;
-  filter: drop-shadow(0 14px 34px rgba(31, 130, 211, .32));
-  transition: transform .2s var(--ease);
+  filter: drop-shadow(0 14px 34px rgba(31, 130, 211, .28));
+  transition: transform .9s var(--intro-ease);
 }
-.intro-logo:hover img { transform: scale(1.04); }
-.intro-logo.press img { transform: scale(.9); }
+.intro-logo:hover img { transform: scale(1.03); }
+.intro-logo.press img { transform: scale(.94); transition: transform .5s var(--intro-ease); }
 .intro-title { font-size: clamp(2.4rem, 7vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; color: var(--text); }
-.intro-hint { font-size: 14px; color: var(--text-soft); }
+.intro-hint { font-size: 14px; color: var(--text-soft); letter-spacing: .01em; }
+/* halo lumineux doux et diffus (pas d'onde bleue brute) */
 .intro-ripple {
-  position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; border-radius: 50%;
-  background: var(--primary); opacity: 0; transform: translate(-50%, -50%) scale(0); pointer-events: none;
+  position: absolute; left: 50%; top: 50%; width: 220px; height: 220px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 130, 211, .16), rgba(31, 130, 211, .06) 42%, transparent 68%);
+  opacity: 0; transform: translate(-50%, -50%) scale(.2); pointer-events: none; filter: blur(2px);
 }
-.intro-ripple.go { animation: introRipple .75s var(--ease) forwards; }
-@keyframes introRipple {
-  0% { transform: translate(-50%, -50%) scale(0); opacity: .35; }
-  100% { transform: translate(-50%, -50%) scale(34); opacity: 0; }
+.intro-ripple.go { animation: introHalo 2.6s var(--intro-ease) forwards; }
+@keyframes introHalo {
+  0% { transform: translate(-50%, -50%) scale(.2); opacity: 0; }
+  25% { opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(7); opacity: 0; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .intro-logo img { animation: introLogoIn 1s var(--ease) both; }
-  .intro-title { animation: introFadeUp .9s var(--ease) .28s both; }
-  .intro-hint { animation: introFadeUp .9s var(--ease) .52s both, hintPulse 2.4s ease-in-out 1.6s infinite; }
-  @keyframes introLogoIn { from { opacity: 0; transform: scale(.82); } to { opacity: 1; transform: scale(1); } }
-  @keyframes introFadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-  @keyframes hintPulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+  .intro-logo img { animation: introLogoIn 1.8s var(--intro-ease) both; }
+  .intro-title { animation: introFadeUp 1.5s var(--intro-ease) .55s both; }
+  .intro-hint { animation: introFadeUp 1.5s var(--intro-ease) 1.05s both, hintPulse 4.2s ease-in-out 2.4s infinite; }
+  @keyframes introLogoIn { from { opacity: 0; transform: scale(.86); } to { opacity: 1; transform: scale(1); } }
+  @keyframes introFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes hintPulse { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
 }
 
 /* ===== Buttons ===== */
