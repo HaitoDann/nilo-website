@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nilo — Gestion de projets locale, sans compte ni serveur</title>
-  <meta name="description" content="Nilo est une application desktop de gestion de projets 100% locale : Kanban, Gantt, calendrier et sous-tâches. Vos données restent sur votre machine. Sans compte, sans cloud, sans serveur." />
+  <title>Nilo — Gestion de projets locale</title>
+  <meta name="description" content="Nilo : gestion de projets desktop, 100% locale. Sans compte, sans cloud. Windows." />
   <meta name="color-scheme" content="light" />
-
   <meta property="og:title" content="Nilo — Gestion de projets locale" />
-  <meta property="og:description" content="Kanban, Gantt, calendrier, sous-tâches. Vos données restent chez vous. Sans compte, sans cloud." />
+  <meta property="og:description" content="Kanban, Gantt, calendrier. Vos données restent chez vous." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,6 +17,18 @@
   <link rel="icon" href="assets/favicon.png" />
 </head>
 <body>
+
+  <!-- ===== Écran d'intro ===== -->
+  <div id="intro" class="intro">
+    <div class="intro-inner">
+      <button class="intro-logo" aria-label="Entrer sur le site">
+        <span class="intro-ripple"></span>
+        <img src="assets/logo.png" alt="Nilo" />
+      </button>
+      <div class="intro-title">Nilo</div>
+      <div class="intro-hint">Cliquez sur le logo pour entrer</div>
+    </div>
+  </div>
 
   <!-- ===== Header ===== -->
   <header class="site-header" id="top">
@@ -30,7 +41,6 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="#top">Accueil</a></li>
         <li><a href="#features">Fonctionnalités</a></li>
         <li><a href="#about">À propos</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -44,15 +54,12 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text reveal">
-          <span class="hero-eyebrow">« Beta publique » · Windows</span>
-          <h1>Nilo <span class="hero-version">0.15.2</span></h1>
-          <p class="hero-lead">
-            La gestion de projets qui reste chez vous. Kanban, Gantt, calendrier
-            et sous-tâches — sans compte, sans cloud. Installez-la aujourd'hui.
-          </p>
+          <span class="hero-eyebrow">Windows · Gratuit</span>
+          <h1>Nilo</h1>
+          <p class="hero-lead">La gestion de projets qui reste sur votre machine.</p>
           <div class="hero-actions">
             <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe" class="btn btn-white btn-lg">Télécharger</a>
-            <a href="#faq" class="btn btn-outline-white btn-lg">Guide d'installation</a>
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64_portable.exe" class="btn btn-outline-white btn-lg">Version portable</a>
           </div>
         </div>
 
@@ -60,7 +67,7 @@
           <div class="window-mock">
             <div class="window-bar">
               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-              <span class="window-title">Nilo — Vault</span>
+              <span class="window-title">Nilo</span>
             </div>
             <div class="window-body">
               <div class="mock-sidebar">
@@ -95,7 +102,7 @@
       </div>
 
       <div class="hero-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,72 C240,128 500,120 720,88 C960,52 1180,20 1440,64 L1440,120 L0,120 Z" fill="var(--bg)"/></svg>
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,72 C240,128 500,120 720,88 C960,52 1180,20 1440,64 L1440,120 L0,120 Z"/></svg>
       </div>
     </section>
 
@@ -104,8 +111,7 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Fonctionnalités</span>
-          <h2>Qu'est-ce que Nilo ?</h2>
-          <p>Une application desktop de gestion de projets qui fonctionne « out of the box » : quatre vues par projet, et vos données stockées dans un simple dossier.</p>
+          <h2>Tout ce qu'il faut, en local</h2>
         </div>
         <div class="feature-grid" data-stagger>
           <article class="feature-card">
@@ -113,42 +119,42 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="11" rx="1"/><rect x="17" y="4" width="4" height="14" rx="1"/></svg>
             </div>
             <h3>Kanban</h3>
-            <p>Glissez-déposez vos tâches entre les colonnes. Filtres par priorité et tags, tri à la volée.</p>
+            <p>Glisser-déposer entre les colonnes.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
             </div>
             <h3>Vue liste</h3>
-            <p>Toutes vos tâches groupées par statut, avec filtres, tri et ajout rapide inline.</p>
+            <p>Vos tâches groupées par statut.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="5" x2="15" y2="5"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="19" x2="11" y2="19"/></svg>
             </div>
-            <h3>Gantt interactif</h3>
-            <p>Des barres déplaçables et redimensionnables en temps réel pour planifier vos échéances.</p>
+            <h3>Gantt</h3>
+            <p>Planifiez sur une frise temporelle.</p>
           </article>
           <article class="feature-card feature-card--highlight">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
             </div>
             <h3>Stockage local</h3>
-            <p>Un vault SQLite dans le dossier de votre choix, inspiré d'Obsidian. Zéro cloud, zéro compte : vos données restent chez vous, toujours.</p>
+            <p>Un vault SQLite dans votre dossier. Zéro cloud, zéro compte.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
             </div>
             <h3>Calendrier</h3>
-            <p>Une vue mensuelle des échéances, projet par projet, pour ne rien laisser passer.</p>
+            <p>Les échéances, vue par mois.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 20 6"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
             </div>
             <h3>Sous-tâches</h3>
-            <p>Subdivisez vos tâches avec des cases à cocher et suivez la progression d'un coup d'œil.</p>
+            <p>Découpez et suivez la progression.</p>
           </article>
         </div>
       </div>
@@ -159,29 +165,20 @@
       <div class="container about-inner">
         <div class="about-text reveal">
           <span class="eyebrow">Le concept</span>
-          <h2>Vos données, dans un simple dossier</h2>
-          <p>
-            Avec Nilo, vous choisissez un dossier. L'application y crée une base SQLite
-            (<code>nilo.db</code>) et c'est tout : vous travaillez. Rien n'est envoyé sur Internet.
-          </p>
-          <p>
-            Un vault par client, par équipe, sur une clé USB ou un NAS… peu importe.
-            Nilo fonctionne entièrement hors-ligne, sans aucune dépendance réseau.
-          </p>
+          <h2>Vos données restent chez vous</h2>
+          <p>Choisissez un dossier : Nilo y crée une base SQLite (<code>nilo.db</code>). Rien ne part en ligne.</p>
           <ul class="check-list" data-stagger>
-            <li>Multi-vault et multi-projets, chacun avec sa couleur</li>
-            <li>Aucune inscription, aucune donnée envoyée en ligne</li>
-            <li>Léger et rapide, construit avec Tauri (Rust + React)</li>
-            <li>Installeur classique ou version portable</li>
+            <li>Sans compte, sans cloud</li>
+            <li>Fonctionne hors-ligne</li>
+            <li>Installeur ou version portable</li>
           </ul>
-          <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-ghost">Voir toutes les versions</a>
+          <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-ghost">Toutes les versions</a>
         </div>
         <div class="about-visual reveal" aria-hidden="true">
           <div class="glass-card">
             <div class="gc-row"><span class="gc-icon">✓</span> Vos données sur votre disque</div>
-            <div class="gc-row"><span class="gc-icon">✓</span> Fonctionne hors-ligne</div>
-            <div class="gc-row"><span class="gc-icon">✓</span> Sans publicité, sans pistage</div>
-            <div class="gc-row"><span class="gc-icon">✓</span> Installeur &amp; version portable</div>
+            <div class="gc-row"><span class="gc-icon">✓</span> Hors-ligne, sans pistage</div>
+            <div class="gc-row"><span class="gc-icon">✓</span> Installeur &amp; portable</div>
           </div>
         </div>
       </div>
@@ -191,13 +188,12 @@
     <section class="section download" id="download">
       <div class="container">
         <div class="download-card reveal">
-          <h2>Téléchargez Nilo pour Windows</h2>
-          <p>Version 0.15.2 (beta publique). Choisissez l'installeur classique ou la version portable, sans installation.</p>
+          <h2>Téléchargez Nilo</h2>
+          <p>Version 0.15.2 · Windows 10/11 (64 bits)</p>
           <div class="download-buttons">
             <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe" class="btn btn-white btn-lg">Installeur (.exe)</a>
-            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64_portable.exe" class="btn btn-outline-white btn-lg">Version portable</a>
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64_portable.exe" class="btn btn-outline-white btn-lg">Portable</a>
           </div>
-          <p class="download-sub">⚠️ Windows peut afficher un avertissement SmartScreen sur les <code>.exe</code> non signés. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>
         </div>
       </div>
     </section>
@@ -212,27 +208,19 @@
         <div data-stagger>
           <details class="faq-item">
             <summary>Où sont stockées mes données ?</summary>
-            <p>Uniquement sur votre machine, dans le dossier (« vault ») que vous choisissez. Nilo y crée une base SQLite <code>nilo.db</code>. Rien n'est envoyé sur Internet.</p>
+            <p>Sur votre machine, dans le dossier de votre choix. Rien n'est envoyé en ligne.</p>
           </details>
           <details class="faq-item">
-            <summary>Ai-je besoin d'un compte ou d'une connexion ?</summary>
-            <p>Non. Aucun compte, aucune inscription. Nilo fonctionne entièrement hors-ligne.</p>
+            <summary>Faut-il un compte ?</summary>
+            <p>Non. Aucun compte, aucune connexion requise.</p>
           </details>
           <details class="faq-item">
-            <summary>Sur quels systèmes Nilo fonctionne-t-il ?</summary>
-            <p>La beta publique actuelle est disponible pour <strong>Windows 10/11 (64 bits)</strong>, en installeur ou en version portable.</p>
+            <summary>Quels systèmes ?</summary>
+            <p>Windows 10/11 (64 bits), en installeur ou version portable.</p>
           </details>
           <details class="faq-item">
-            <summary>Windows affiche un avertissement au lancement, est-ce normal ?</summary>
-            <p>Oui. Les exécutables ne sont pas encore signés, donc SmartScreen peut afficher un avertissement. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>
-          </details>
-          <details class="faq-item">
-            <summary>Quelle est la différence entre l'installeur et la version portable ?</summary>
-            <p>L'installeur place Nilo dans votre dossier utilisateur avec un raccourci. La version portable se lance directement, sans installation — pratique sur une clé USB.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Comment recevoir les mises à jour ?</summary>
-            <p>Les nouvelles versions sont publiées sur GitHub Releases. Suivez le dépôt pour être notifié à chaque sortie.</p>
+            <summary>Windows affiche un avertissement ?</summary>
+            <p>Les <code>.exe</code> ne sont pas encore signés. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>
           </details>
         </div>
       </div>
@@ -245,7 +233,6 @@
       <div class="footer-brand">
         <span class="brand-chip"><img src="assets/favicon.png" alt="" width="20" height="20" /></span>
         <span class="brand-name">Nilo</span>
-        <p>Gestion de projets locale, sans serveur, sans compte. Vos données, toujours chez vous.</p>
       </div>
       <div class="footer-links">
         <a href="#features">Fonctionnalités</a>
@@ -255,7 +242,7 @@
       </div>
     </div>
     <div class="footer-bottom container">
-      <p>© <span id="year"></span> Nilo. Fait avec ☕ — données chez vous, toujours.</p>
+      <p>© <span id="year"></span> Nilo — données chez vous, toujours.</p>
     </div>
   </footer>
 

@@ -2,6 +2,33 @@
   'use strict';
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var body = document.body;
+
+  /* ---- Écran d'intro (clic sur le logo pour entrer) ---- */
+  var intro = document.getElementById('intro');
+  if (intro) {
+    body.classList.add('intro-open');
+    var introLogo = intro.querySelector('.intro-logo');
+    var ripple = intro.querySelector('.intro-ripple');
+    var entered = false;
+
+    var enter = function () {
+      if (entered) return;
+      entered = true;
+      if (introLogo) introLogo.classList.add('press');
+      if (ripple) { ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go'); }
+      var wait = reduce ? 0 : 360;
+      setTimeout(function () {
+        intro.classList.add('hide');
+        body.classList.remove('intro-open');
+        setTimeout(function () {
+          if (intro && intro.parentNode) intro.parentNode.removeChild(intro);
+        }, reduce ? 0 : 650);
+      }, wait);
+    };
+
+    if (introLogo) introLogo.addEventListener('click', enter);
+  }
 
   /* ---- Menu mobile ---- */
   var toggle = document.querySelector('.nav-toggle');
@@ -37,7 +64,6 @@
   }
 
   /* ---- Apparition au scroll (fade + slide) ---- */
-  var body = document.body;
   if (!reduce && 'IntersectionObserver' in window) {
     body.classList.add('js-reveal');
 
