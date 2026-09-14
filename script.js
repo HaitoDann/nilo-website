@@ -90,6 +90,12 @@
     revealEls.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---- Vague animée : couper si mouvement réduit ---- */
+  if (reduce) {
+    var waveAnim = document.getElementById('waveAnim');
+    if (waveAnim && waveAnim.parentNode) waveAnim.parentNode.removeChild(waveAnim);
+  }
+
   /* ---- Année courante ---- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
