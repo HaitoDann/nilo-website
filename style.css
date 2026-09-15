@@ -179,12 +179,12 @@ body.intro-open { overflow: hidden; }
   background: radial-gradient(120% 120% at 85% -10%, rgba(255,255,255,.16), transparent 45%);
   pointer-events: none;
 }
-.hero-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+.hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; }
 .hero-eyebrow { display: inline-block; font-size: 15px; font-weight: 500; color: rgba(255,255,255,.85); margin-bottom: 14px; }
 .hero-text h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); line-height: 1.02; font-weight: 700; letter-spacing: -0.03em; }
 .hero-version { font-weight: 600; opacity: .92; }
-.hero-lead { font-size: 1.2rem; color: rgba(255,255,255,.92); margin: 22px 0 34px; max-width: 40ch; line-height: 1.55; }
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-lead { font-size: 1.2rem; color: rgba(255,255,255,.92); margin: 22px auto 34px; max-width: 44ch; line-height: 1.55; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 
 .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; line-height: 0; z-index: 1; }
 .hero-wave svg { width: 100%; height: 110px; display: block; }
@@ -243,12 +243,6 @@ body.intro-open { overflow: hidden; }
 .feature-icon svg { width: 21px; height: 21px; }
 .feature-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
 .feature-card p { color: var(--text-soft); font-size: 15px; line-height: 1.6; }
-/* carte mise en avant en dégradé (façon Linux Mint) */
-.feature-card--highlight { background: var(--hero-grad); border-color: transparent; color: #fff; box-shadow: var(--shadow); }
-.feature-card--highlight .feature-icon { background: rgba(255,255,255,.18); color: #fff; }
-.feature-card--highlight h3 { color: #fff; }
-.feature-card--highlight p { color: rgba(255,255,255,.9); }
-.feature-card--highlight:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
 
 /* About */
 .about-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center; }
