@@ -4,32 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nilo — Gestion de projets locale</title>
-  <meta name="description" content="Nilo : gestion de projets desktop, 100% locale. Sans compte, sans cloud. Windows." />
+  <meta name="description" content="Nilo : gestion de projets desktop, 100% locale. Kanban, Gantt, calendrier. Sans compte, sans cloud. Windows." />
   <meta name="color-scheme" content="light" />
+  <link rel="canonical" href="https://haitodann.github.io/nilo-website/" />
   <meta property="og:title" content="Nilo — Gestion de projets locale" />
-  <meta property="og:description" content="Kanban, Gantt, calendrier. Vos données restent chez vous." />
+  <meta property="og:description" content="Kanban, Gantt, calendrier. Vos données restent chez vous, sur votre machine." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13" />
   <link rel="icon" href="assets/favicon.png" />
-  <noscript><style>.intro { display: none !important; }</style></noscript>
 </head>
 <body>
-
-  <!-- ===== Écran d'intro ===== -->
-  <div id="intro" class="intro">
-    <div class="intro-inner">
-      <button class="intro-logo" aria-label="Entrer sur le site">
-        <span class="intro-ripple"><i></i><i></i><i></i></span>
-        <img src="assets/logo.png" alt="Nilo" />
-      </button>
-      <div class="intro-title">Nilo</div>
-      <div class="intro-hint">Cliquez sur le logo pour entrer</div>
-    </div>
-  </div>
 
   <!-- ===== Header ===== -->
   <header class="site-header" id="top">
@@ -45,7 +33,14 @@
         <li><a href="#features">Fonctionnalités</a></li>
         <li><a href="#about">À propos</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe" class="btn btn-nav">Télécharger</a></li>
+        <li>
+          <a href="https://github.com/HaitoDann/Nilo-releases" class="nav-github" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-nav" data-dl="page">Télécharger</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -55,15 +50,31 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text reveal">
-          <span class="hero-eyebrow">Windows · Gratuit</span>
+          <span class="hero-eyebrow">Windows · Gratuit · Bêta</span>
           <h1>Nilo</h1>
-          <p class="hero-lead">La gestion de projets qui reste sur votre machine.</p>
+          <p class="hero-lead">La gestion de projets qui reste sur votre machine. Kanban, Gantt, calendrier — sans compte, sans cloud, sans abonnement.</p>
           <div class="hero-actions">
-            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe" class="btn btn-white btn-lg">Télécharger</a>
-            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64_portable.exe" class="btn btn-outline-white btn-lg">Version portable</a>
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-white btn-lg" data-dl="setup">
+              Télécharger
+            </a>
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-outline-white btn-lg" data-dl="portable">
+              Version portable
+            </a>
           </div>
+          <p class="hero-version-note" data-dl-version>Chargement de la version…</p>
         </div>
 
+        <!-- Screenshot — remplacer src par assets/screenshot-kanban.png quand disponible -->
+        <div class="hero-visual reveal">
+          <div class="screenshot-frame">
+            <img
+              src="assets/screenshot-kanban.png"
+              alt="Nilo — vue Kanban"
+              class="screenshot-img"
+              onerror="this.closest('.hero-visual').style.display='none'"
+            />
+          </div>
+        </div>
       </div>
 
       <div class="hero-wave" aria-hidden="true">
@@ -89,42 +100,42 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="11" rx="1"/><rect x="17" y="4" width="4" height="14" rx="1"/></svg>
             </div>
             <h3>Kanban</h3>
-            <p>Glisser-déposer entre les colonnes.</p>
+            <p>Colonnes personnalisables, glisser-déposer, priorités et assignés visibles sur chaque carte — sans avoir à ouvrir la tâche.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
             </div>
             <h3>Vue liste</h3>
-            <p>Vos tâches groupées par statut.</p>
+            <p>Toutes les tâches du projet sur une seule page, filtrables et triables par statut, priorité ou date d'échéance.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="5" x2="15" y2="5"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="19" x2="11" y2="19"/></svg>
             </div>
             <h3>Gantt</h3>
-            <p>Planifiez sur une frise temporelle.</p>
+            <p>Visualisez la durée et le chevauchement de vos tâches. Glissez les barres pour replanifier, créez des groupes et des jalons.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
             </div>
             <h3>Stockage local</h3>
-            <p>Un vault SQLite dans votre dossier. Zéro cloud, zéro compte.</p>
+            <p>Vos données vivent dans un fichier <code>nilo.db</code> sur votre disque. Sauvegardez-le, déplacez-le, mettez-le sur votre NAS — il vous appartient.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
             </div>
             <h3>Calendrier</h3>
-            <p>Les échéances, vue par mois.</p>
+            <p>Tâches et événements sur un calendrier mensuel. Glissez une échéance sur un autre jour pour la replanifier instantanément.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 20 6"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
             </div>
             <h3>Sous-tâches</h3>
-            <p>Découpez et suivez la progression.</p>
+            <p>Découpez chaque tâche en étapes, cochez au fil de l'avancement. Un anneau de progression s'affiche directement sur la carte Kanban.</p>
           </article>
         </div>
       </div>
@@ -136,10 +147,11 @@
         <div class="about-text reveal">
           <span class="eyebrow">Le concept</span>
           <h2>Vos données restent chez vous</h2>
-          <p>Choisissez un dossier : Nilo y crée une base SQLite (<code>nilo.db</code>). Rien ne part en ligne.</p>
+          <p>Choisissez un dossier : Nilo y crée une base SQLite (<code>nilo.db</code>). Rien ne part en ligne. Vous pouvez le copier sur une clé USB, le mettre sur un NAS, ou simplement le garder sur votre bureau.</p>
           <ul class="check-list" data-stagger>
             <li>Sans compte, sans cloud</li>
-            <li>Fonctionne hors-ligne</li>
+            <li>Fonctionne hors-ligne, partout</li>
+            <li>Sauvegarde automatique à chaque ouverture</li>
             <li>Installeur ou version portable</li>
           </ul>
           <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-ghost">Toutes les versions</a>
@@ -149,6 +161,7 @@
             <div class="gc-row"><span class="gc-icon">✓</span> Vos données sur votre disque</div>
             <div class="gc-row"><span class="gc-icon">✓</span> Hors-ligne, sans pistage</div>
             <div class="gc-row"><span class="gc-icon">✓</span> Installeur &amp; portable</div>
+            <div class="gc-row"><span class="gc-icon">✓</span> Sauvegarde automatique</div>
           </div>
         </div>
       </div>
@@ -159,11 +172,12 @@
       <div class="container">
         <div class="download-card reveal">
           <h2>Téléchargez Nilo</h2>
-          <p>Version 0.15.2 · Windows 10/11 (64 bits)</p>
+          <p data-dl-version>Windows 10/11 · 64 bits</p>
           <div class="download-buttons">
-            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64-setup.exe" class="btn btn-white btn-lg">Installeur (.exe)</a>
-            <a href="https://github.com/HaitoDann/Nilo-releases/releases/download/v0.15.2/Nilo_0.15.2_x64_portable.exe" class="btn btn-outline-white btn-lg">Portable</a>
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-white btn-lg" data-dl="setup">Installeur (.exe)</a>
+            <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest" class="btn btn-outline-white btn-lg" data-dl="portable">Portable</a>
           </div>
+          <p class="download-sub">Les <code>.exe</code> ne sont pas encore signés — Windows peut afficher un avertissement. Cliquez « Informations complémentaires » → « Exécuter quand même ».</p>
         </div>
       </div>
     </section>
@@ -178,19 +192,23 @@
         <div data-stagger>
           <details class="faq-item">
             <summary>Où sont stockées mes données ?</summary>
-            <p>Sur votre machine, dans le dossier de votre choix. Rien n'est envoyé en ligne.</p>
+            <p>Sur votre machine, dans le dossier de votre choix. Nilo y crée un fichier <code>nilo.db</code> (SQLite). Rien n'est envoyé en ligne, jamais.</p>
           </details>
           <details class="faq-item">
             <summary>Faut-il un compte ?</summary>
-            <p>Non. Aucun compte, aucune connexion requise.</p>
+            <p>Non. Aucun compte, aucune connexion requise. Nilo fonctionne entièrement hors-ligne.</p>
           </details>
           <details class="faq-item">
-            <summary>Quels systèmes ?</summary>
-            <p>Windows 10/11 (64 bits), en installeur ou version portable.</p>
+            <summary>Quels systèmes sont supportés ?</summary>
+            <p>Windows 10/11 (64 bits), en installeur ou version portable. macOS et Linux sont prévus dans une prochaine version.</p>
           </details>
           <details class="faq-item">
-            <summary>Windows affiche un avertissement ?</summary>
-            <p>Les <code>.exe</code> ne sont pas encore signés. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>
+            <summary>Windows affiche un avertissement au lancement ?</summary>
+            <p>Les <code>.exe</code> ne sont pas encore signés numériquement. Cliquez « Informations complémentaires » puis « Exécuter quand même » — le code source est consultable sur GitHub.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Puis-je migrer depuis Notion, Trello ou Jira ?</summary>
+            <p>Oui. Nilo importe les exports CSV (Notion, Asana, Jira, ClickUp, Monday, Excel…) et les exports JSON de Trello, directement depuis les Réglages.</p>
           </details>
         </div>
       </div>
@@ -209,10 +227,11 @@
         <a href="#about">À propos</a>
         <a href="#faq">FAQ</a>
         <a href="https://github.com/HaitoDann/Nilo-releases/releases/latest">Télécharger</a>
+        <a href="https://github.com/HaitoDann/Nilo-releases">GitHub</a>
       </div>
     </div>
     <div class="footer-bottom container">
-      <p>© <span id="year"></span> Nilo — données chez vous, toujours.</p>
+      <p>© <span id="year"></span> <a href="https://github.com/HaitoDann" class="footer-vinx">VinX Labs</a> — données chez vous, toujours.</p>
     </div>
   </footer>
 
@@ -220,6 +239,6 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
