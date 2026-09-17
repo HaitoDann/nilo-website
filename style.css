@@ -132,20 +132,34 @@ code {
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-version-note { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.65); }
 
-/* Screenshot dans le hero */
-.hero-visual { display: flex; justify-content: center; align-items: center; }
+/* Carousel screenshots dans le hero */
+.hero-visual { display: flex; justify-content: center; align-items: flex-start; }
+.screenshot-carousel { width: 100%; max-width: 560px; }
+.screenshot-tabs {
+  display: flex; gap: 4px; margin-bottom: 12px;
+  background: rgba(255,255,255,.1); border-radius: 8px; padding: 4px;
+  width: fit-content;
+}
+.stab {
+  background: transparent; border: none; cursor: pointer;
+  color: rgba(255,255,255,.65); font-size: 13px; font-weight: 500;
+  padding: 5px 14px; border-radius: 5px;
+  transition: background .2s, color .2s;
+}
+.stab:hover { background: rgba(255,255,255,.12); color: #fff; }
+.stab.active { background: rgba(255,255,255,.22); color: #fff; }
 .screenshot-frame {
-  border-radius: 12px;
-  overflow: hidden;
+  border-radius: 12px; overflow: hidden; position: relative;
+  aspect-ratio: 16/9;
   box-shadow: 0 40px 80px -20px rgba(10, 30, 55, .55), 0 0 0 1px rgba(255,255,255,.15);
   background: var(--bg-alt);
 }
 .screenshot-img {
-  display: block;
-  width: 100%;
-  max-width: 560px;
-  height: auto;
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; object-fit: contain;
+  opacity: 0; transition: opacity .5s ease;
 }
+.screenshot-img.active { opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .screenshot-frame { animation: float 7s ease-in-out infinite; }
   @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }

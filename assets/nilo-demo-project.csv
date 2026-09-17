@@ -1,0 +1,16 @@
+title,status,priority,start_date,due_date,tags,description
+Intégration paiement Lemon Squeezy,En cours,Haute,2026-09-01,2026-09-28,paiement;backend,Connexion à l'API Lemon Squeezy pour les licences perpétuelles et abonnements
+Internationalisation anglais (i18n EN),En cours,Haute,2026-09-05,2026-10-10,i18n;frontend,Extraction de toutes les chaînes FR et traduction EN — interface + CHANGELOG
+Landing page v2,En révision,Moyenne,2026-09-12,2026-09-20,marketing;design,Refonte complète : suppression de l'intro screen, hero 2 colonnes avec screenshot
+Fix crash Gantt sur très grand projet,Terminé,Urgente,2026-08-18,2026-08-24,bug;gantt,Corruption mémoire sur projets > 200 tâches — résolu en virtualisant le rendu SVG
+Import CSV (Notion / Asana / Jira),Terminé,Haute,2026-09-01,2026-09-12,import;données,Parseur CSV natif avec détection automatique des colonnes et mapping manuel
+Import Trello (JSON export),Terminé,Haute,2026-09-12,2026-09-16,import;données,Mapping automatique colonnes → statuts Nilo avec ajustement par liste
+Signature code Windows (EV cert),Bloqué,Haute,2026-09-01,2026-10-01,distribution;windows,En attente ouverture compte bancaire VinX Labs pour acheter le certificat EV
+Notifications d'échéance (bureau),À faire,Haute,2026-09-22,2026-10-18,notifications;tauri,Alertes natives via tauri-plugin-notification — J-1 et jour J
+Export PDF des projets,À faire,Moyenne,2026-10-05,2026-10-28,export;pdf,Impression de la vue liste ou Kanban en PDF via headless Chromium embarqué
+Raccourcis clavier globaux,À faire,Moyenne,2026-10-01,2026-10-22,UX;clavier,Palette de commandes style ⌘K + raccourcis contextuels (N = nouvelle tâche…)
+Glisser-déposer entre projets,À faire,Moyenne,2026-10-15,2026-10-30,UX;kanban,Drag d'une carte d'un projet vers un autre depuis la vue multi-projets
+Tests automatisés (Playwright),À faire,Moyenne,2026-10-20,2026-11-20,qualité;CI,Suite de tests end-to-end sur les 4 vues principales — intégré au workflow CI
+Widget calendrier natif macOS/iOS,Backlog,Basse,2026-11-01,2026-12-05,calendrier;mobile,Synchronisation des échéances Nilo vers le calendrier système
+Vue Timeline multi-projets,Backlog,Basse,2026-11-15,2027-01-10,gantt;multi-projets,Gantt agrégé sur tous les projets — vue directeur de portefeuille
+Mode partage lecture seule,Backlog,Basse,2026-12-01,2027-02-01,collaboration;partage,Export d'un lien de consultation sans compte ni sync cloud

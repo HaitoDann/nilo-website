@@ -96,4 +96,56 @@
   /* ---- Année courante ---- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---- Carousel screenshots ---- */
+  var carousel = document.querySelector('.screenshot-carousel');
+  if (carousel) {
+    var slideImgs = Array.prototype.slice.call(carousel.querySelectorAll('.screenshot-img'));
+    var slideTabs = Array.prototype.slice.call(carousel.querySelectorAll('.stab'));
+    var available = [];
+    var currentPos = 0;
+    var carouselTimer = null;
+
+    function carouselShow(imgIdx) {
+      slideImgs.forEach(function (img, i) { img.classList.toggle('active', i === imgIdx); });
+      slideTabs.forEach(function (tab) { tab.classList.toggle('active', parseInt(tab.dataset.view) === imgIdx); });
+    }
+
+    function carouselNext() {
+      if (available.length < 2) return;
+      currentPos = (currentPos + 1) % available.length;
+      carouselShow(available[currentPos]);
+    }
+
+    function carouselResetTimer() {
+      clearInterval(carouselTimer);
+      if (!reduce && available.length > 1) carouselTimer = setInterval(carouselNext, 4000);
+    }
+
+    slideImgs.forEach(function (img, i) {
+      function onLoad() {
+        if (available.indexOf(i) !== -1) return;
+        available.push(i);
+        available.sort(function (a, b) { return a - b; });
+        if (available.length === 1) { currentPos = 0; carouselShow(i); }
+        if (available.length === 2) carouselResetTimer();
+      }
+      function onError() {
+        if (slideTabs[i]) slideTabs[i].style.display = 'none';
+      }
+      if (img.complete) { img.naturalWidth > 0 ? onLoad() : onError(); }
+      else { img.addEventListener('load', onLoad); img.addEventListener('error', onError); }
+    });
+
+    slideTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var idx = parseInt(tab.dataset.view);
+        var pos = available.indexOf(idx);
+        if (pos === -1) return;
+        currentPos = pos;
+        carouselShow(idx);
+        carouselResetTimer();
+      });
+    });
+  }
 })();

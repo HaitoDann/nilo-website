@@ -64,15 +64,18 @@
           <p class="hero-version-note" data-dl-version>Chargement de la version…</p>
         </div>
 
-        <!-- Screenshot — remplacer src par assets/screenshot-kanban.png quand disponible -->
         <div class="hero-visual reveal">
-          <div class="screenshot-frame">
-            <img
-              src="assets/screenshot-kanban.png"
-              alt="Nilo — vue Kanban"
-              class="screenshot-img"
-              onerror="this.closest('.hero-visual').style.display='none'"
-            />
+          <div class="screenshot-carousel">
+            <div class="screenshot-tabs" role="tablist" aria-label="Vue">
+              <button class="stab active" data-view="0" role="tab" aria-selected="true">Kanban</button>
+              <button class="stab" data-view="1" role="tab" aria-selected="false">Gantt</button>
+              <button class="stab" data-view="2" role="tab" aria-selected="false">Liste</button>
+            </div>
+            <div class="screenshot-frame">
+              <img src="assets/screenshot-kanban.png" alt="Nilo — vue Kanban" class="screenshot-img active" data-idx="0" />
+              <img src="assets/screenshot-gantt.png"  alt="Nilo — vue Gantt"  class="screenshot-img"        data-idx="1" />
+              <img src="assets/screenshot-liste.png"  alt="Nilo — vue Liste"  class="screenshot-img"        data-idx="2" />
+            </div>
           </div>
         </div>
       </div>
